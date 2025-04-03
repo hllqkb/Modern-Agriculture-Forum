@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+	<head> 
+   <title>论坛</title>
+   	<link rel="stylesheet" href="../css/mdui.min.css" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+			</head> 
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-bottom-nav-fixed"> 
+   <style>
+   .title{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+   .base{
+   margin:auto;margin-bottom:10px;
+       width:80%;border-radius:5px
+       }
+   </style>
+<div class="mdui-appbar mdui-shadow-0">
+  <div class="mdui-toolbar"> 
+   <body class="mdui-drawer-body-right">  
+ <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+  <div class="mdui-drawer" id="left-drawer">
+  
+ <div class="mdui-card">
+  <div class="mdui-card-media">
+    <img src="https://api.sunweihu.com/api/sjbz/api.php?lx=dongman"/>
+    <div class="mdui-card-media-covered">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">你好</div>
+        <div class="mdui-card-primary-subtitle">世界!</div>
+      </div>
+    </div>
+  </div>
+    </div>
+<ul class="mdui-list">
+  <li class="mdui-menu-item">
+    <a href="../home.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>主页
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item ">
+    <a href="../tool.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">business_center</i>工具
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="getwz.php" class="mdui-ripple mdui-list-item-active">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">book</i>论坛
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="../bj.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">file_upload</i>上传
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+</ul>
+</div>
+
+</body>
+        <a href="javascript:;" class="mdui-typo-title">文章列表</a>
+       <div class="mdui-toolbar-spacer"></div>
+<div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
+  <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+  <input class="mdui-textfield-input" type="text" placeholder="搜索"/>
+  <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+</div>
+<a href="../wz.html" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">add</i></a>
+</div>
+</div>
+ <hr >
+ <div id="a">
+	</div>
+     <script src="../js/jquery.lazyload.js" type="text/javascript"></script>
+<script src="../js/jquery.js"></script>
+      	<script src="../js/mdui.min.js"></script>
+ <script src="function/is.js"></script>
+  <div style="width: 100%" class="mdui-bottom-nav mdui-bottom-nav-text-auto mdui-bottom-nav-scroll-hide">
+  <a href="../home.html" class="mdui-ripple">
+    <i class="mdui-icon material-icons">home</i>
+    <label>主页</label>
+  </a>
+  <a href="../tool.html" class="mdui-ripple">
+    <i class="mdui-icon material-icons">business_center</i>
+    <label>工具</label>
+  </a>
+  <a href="getwz.php" class="mdui-ripple mdui-bottom-nav-active">
+    <i class="mdui-icon material-icons">book</i>
+    <label>论坛</label>
+  </a>
+  <a href="../bj.html" class="mdui-ripple">
+    <i class="mdui-icon material-icons">file_upload</i>
+    <label>文件</label>
+  </a>
+</div>
+	</body>
+</html>

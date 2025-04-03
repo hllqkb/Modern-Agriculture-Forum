@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+	<head> 
+   <title>文件</title>
+   	<link rel="stylesheet" href="/css/mdui.min.css" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+	</head> 
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-bottom-nav-fixed"> 
+ 	<div class="mdui-toolbar">
+ <body class="mdui-drawer-body-right">  
+ <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+  <div class="mdui-drawer" id="left-drawer">
+  
+ <div class="mdui-card">
+  <div class="mdui-card-media">
+    <img src="https://api.sunweihu.com/api/sjbz/api.php?lx=dongman"/>
+    <div class="mdui-card-media-covered">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">你好</div>
+        <div class="mdui-card-primary-subtitle">世界!</div>
+      </div>
+    </div>
+  </div>
+    </div>
+<ul class="mdui-list">
+  <li class="mdui-menu-item">
+    <a href="home.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>主页
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item ">
+    <a href="tool.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">business_center</i>工具
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="function/getwz.php" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">book</i>论坛
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="bj.html" class="mdui-ripple mdui-list-item-active">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">file_upload</i>上传
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+</ul>
+</div>
+
+</body>
+<div class="mdui-progress">
+  <div id="nc" class="mdui-progress-determinate"></div>
+</div>
+ <div class="mdui-toolbar-spacer"></div>
+   <a onclick="window.location.reload()" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+ </div>
+ </div>
+ <div class="mdui-table-fluid mdui-table-hoverable">
+    <table class="mdui-table">
+      <thead>
+        <tr>
+          <th>我的文件列表</th>
+        </tr>
+      </thead>
+      <tbody id="t">
+      </tbody>
+    </table>
+  </div>
+       <script>
+       var rr=new XMLHttpRequest();
+      rr.open("get","function/getuser.php",true);
+      rr.send();
+      rr.onload=function (){
+    zh=rr.responseText
+    a(zh)
+}
+function a(zh){
+    zh=zh
+}
+      var r=new XMLHttpRequest();
+      r.open("get","lb.php",true);
+      r.send();
+      r.onload=function (){
+r=r.responseText
+  r=r.split(":")
+  r=r.reverse(); 
+  for(var i=1;i<=r.length-1;i++)
+  {
+  var  rr=r[i]
+      var tr=document.createElement("tr")
+      var td=document.createElement("input")
+var t=document.getElementById("t");
+td.type="button"
+  td.value=rr
+  td.id="a"
+  td.className="mdui-btn mdui-btn-block mdui-btn-raised mdui-ripple"
+  td.onclick=function (){
+   cc=this.value
+  window.location="/upload/"+zh+"/"+cc
+} 
+   t.appendChild(tr).appendChild(td)
+  }
+ }
+      </script>
+      	<script src="js/mdui.min.js"></script>
+   <script>
+   var xhr = new XMLHttpRequest();
+xhr.onload = function () {
+    // 输出接收到的文字数据
+    if (xhr.responseText=="请重新登录"){
+            mdui.alert(xhr.responseText);
+    setTimeout(function (){
+    window.location="index.php"
+},1000)
+}
+else{
+   var r=xhr.responseText;
+    document.getElementById("id").innerHTML=r;
+    document.getElementById("title").innerHTML="暂无签名";
+}
+}
+xhr.onerror = function () {
+    mdui.alert("未知行为");
+}
+xhr.open("post", "home.php", true);
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+xhr.send();
+function bj(){
+   window.location="xbj.html"; 
+}
+   </script>   
+   <style>
+   .a
+   {
+       border-radius:20px;
+       width: 100px;
+       height: 100px;
+       }
+   </style>
+   <div align="right">
+<button onclick="bj()" class="mdui-fab mdui-ripple"><i class="mdui-icon material-icons">add</i></button>
+</div>
+<div style="width: 100%;" class="mdui-bottom-nav mdui-bottom-nav-text-auto mdui-bottom-nav-scroll-hide">
+  <a href="../home.html" class="mdui-ripple">
+    <i class="mdui-icon material-icons">home</i>
+    <label>主页</label>
+  </a>
+  <a href="../tool.html" class="mdui-ripple">
+    <i class="mdui-icon material-icons">business_center</i>
+    <label>工具</label>
+  </a>
+  <a href="function/getwz.php" class="mdui-ripple">
+    <i class="mdui-icon material-icons">book</i>
+    <label>学习</label>
+  </a>
+  <a href="../bj.html" class="mdui-ripple mdui-bottom-nav-active">
+    <i class="mdui-icon material-icons">file_upload</i>
+    <label>文件</label>
+  </a>
+</div>
+<script>
+rrr=new XMLHttpRequest()
+rrr.open("get","nc.php")
+rrr.send()
+rrr.onload=function()
+{
+rrr=rrr.responseText
+nc=document.getElementById("nc")
+nc.style.width=rrr+"%"
+}
+</script>
+	</body>
+</html>

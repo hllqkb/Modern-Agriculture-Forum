@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head> 
+   <title>发布文章</title>
+   	<link rel="stylesheet" href="/css/mdui.min.css" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+	</head> 
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-bottom-nav-fixed"> 
+    <script src="function/is.js"></script>
+    <div style="border-radius:10px;background-color:#E8E8E8;margin:20px">
+    <h1>发布文章</h1><br>
+      	<form action="wz.php" method="post" enctype="multipart/form-data">
+      <label>选择文章背景图片:</label>
+   <input name="file" type="file">
+         <div class="mdui-textfield mdui-textfield-floating-label">
+ <i class="mdui-icon material-icons">title</i>
+  <label class="mdui-textfield-label">标题</label>
+  <input maxlength="20" name="title" class="mdui-textfield-input" type="text" required/>
+ <div class="mdui-textfield-error">标题不能为空</div>
+  </div>
+   <div class="mdui-textfield mdui-textfield-floating-label">
+   <i class="mdui-icon material-icons">textsms</i>
+   <label class="mdui-textfield-label">内容</label>
+  <textarea maxlength="1000" name="text" class="mdui-textfield-input" type="text" required></textarea>
+  <div class="mdui-textfield-error">内容不能为空</div>
+  </div>
+  <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-block mdui-color-theme-accent">发布</button>
+  <br>
+ </form>
+         </div>
+         
+      	<script src="js/mdui.min.js"></script>
+	</body>
+</html>

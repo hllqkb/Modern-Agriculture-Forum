@@ -1,0 +1,46 @@
+<!doctype html>
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="mdui/css/mdui.min.css">
+        <script src="mdui/js/mdui.min.js"></script>
+    </head> 
+    <body> 
+    <div class="mdui-card">
+
+  <!-- 卡片头部，包含头像、标题、副标题 -->
+  <div class="mdui-card-header">
+    <img class="mdui-card-header-avatar" src="/png/avatar.jpg"/>
+    <div class="mdui-card-header-title">葫芦侠</div>
+    <div class="mdui-card-header-subtitle">自动取关</div>
+  </div>
+
+  <!-- 卡片的媒体内容，可以包含图片、视频等媒体内容，以及标题、副标题 -->
+  <div class="mdui-card-media">
+<img src="/png/card.jpg"></img>
+    <!-- 卡片中可以包含一个或多个菜单按钮 -->
+    <div class="mdui-card-menu">
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-white"><i class="mdui-icon material-icons">share</i></button>
+    </div>
+  </div>
+
+  <!-- 卡片的内容 -->
+  <div class="mdui-card-content">子曰：「关而不互者，不可耻也？偷取可谓傻者也，故此，行之」</div>
+
+  
+
+</div>
+    <form action="run.php">
+    <div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">你的葫芦侠key</label>
+  <input name="key" class="mdui-textfield-input" type="text"/>
+</div>
+<div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">你的葫芦侠id</label>
+  <input name="id" class="mdui-textfield-input" type="text"/>
+</div>
+<button class="mdui-btn mdui-btn-block mdui-btn-raised">开始取关</button>
+</form>
+    </body>
+</html>

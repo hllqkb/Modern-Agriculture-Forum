@@ -1,0 +1,149 @@
+<!doctype html>
+<html> 
+	<head> 
+		<title>主页</title> 
+		<link rel="stylesheet" href="/css/mdui.min.css"> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+	</head> 
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-bottom-nav-fixed"> 
+	<div class="mdui-toolbar">
+ <body class="mdui-drawer-body-right">  
+ <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+  <div class="mdui-drawer" id="left-drawer">
+  
+ <div class="mdui-card">
+  <div class="mdui-card-media">
+    <img src="https://api.sunweihu.com/api/sjbz/api.php?lx=dongman"/>
+    <div class="mdui-card-media-covered">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">你好</div>
+        <div class="mdui-card-primary-subtitle">世界!</div>
+      </div>
+    </div>
+  </div>
+    </div>
+<ul class="mdui-list">
+  <li class="mdui-menu-item mdui-list-item-active">
+    <a href="home.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>主页
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="tool.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">business_center</i>工具
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="function/getwz.php" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">book</i>论坛
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="bj.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">file_upload</i>上传
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+</ul>
+</div>
+
+</body>
+  <span class="mdui-typo-title">欢迎!</span>
+  <div class="mdui-toolbar-spacer"></div>
+   <a onclick="window.location.reload()" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+  <a class="mdui-btn mdui-btn-icon" class="mdui-btn mdui-color-theme-accent" mdui-menu="{target: '#example-attr'}"><i class="mdui-icon material-icons">more_vert</i></a>
+ <ul class="mdui-menu" id="example-attr"> 
+					<li class="mdui-menu-item"> <a href="me.html" class="mdui-ripple">个人中心</a> </li> 
+					<li class="mdui-divider"></li> 
+					<li class="mdui-menu-item"> <a href="sz.html" class="mdui-ripple">设置</a> </li> 
+					<li class="mdui-divider"></li> 
+					<li class="mdui-menu-item"> <a href="javascript:" id="rmb" class="mdui-ripple">。。。</a> </li> 
+					<li class="mdui-divider"></li> 
+					<li class="mdui-menu-item"> <a href="out.php" class="mdui-ripple">退出登陆</a> </li> 
+				</ul> 
+</div>
+		<script src="js/mdui.min.js"></script> 
+		<script>
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function (){
+				// 输出接收到的文字数据
+				if (xhr.responseText=="请重新登录"){
+					mdui.alert(xhr.responseText);
+					setTimeout(function (){
+					window.location="index.php"}
+				,1000)}
+				else{
+					var r=xhr.responseText;
+					document.getElementById("id").innerHTML=r;
+				}
+			}
+			xhr.onerror = function (){
+				mdui.alert("未知行为");
+			}
+			xhr.open("post", "home.php", true);
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send();
+			var rr=new XMLHttpRequest();
+			rr.open("get","function/get.php",true);
+			rr.send();
+			//debug
+			rr.onload=function (){
+             	r=rr.responseText	
+          r=r.split(":")	
+          var ch=document.getElementById("ch")	
+          ch.innerHTML=r[0]  
+          ch.style.background=r[1]
+          	var png=document.getElementById("png")	
+             png.src=r[2]
+             	var qm=document.getElementById("title")	
+             qm.innerHTML=r[3]	
+             var rmb=document.getElementById("rmb")
+             	rmb.innerHTML="软妹币:"+r[4]
+             
+		   }
+			var rrr=new XMLHttpRequest();
+			rrr.open("get","yy.php",true);
+			rrr.send();
+			rrr.onload=function (){
+			var rr=rrr.responseText	
+         document.getElementById("yy").innerHTML="「"+rr+"」"
+         }
+		</script> 
+		<div class="mdui-card"> <!-- 卡片头部，包含头像、标题、副标题 --> 
+			<div class="mdui-card-header"> 
+				<img onclick="window.location='me.html'" style="width: 90px;height: 90px;" id="png" class="mdui-card-header-avatar" src="/png/avatar.jpg" >
+				<div style="font-size:25px;margin-top:15px" id="id" class="mdui-card-header-title"> 
+				</div> 
+				<div style="color:white;margin-left: 90px;width: 70px;text-align: center;" id="ch">
+					 暂无称号 
+				</div> 
+			</div> 
+			<div style="margin-top: 10px;" id="title" class="mdui-card-header-subtitle"></div> <!--垃圾--> <!-- 卡片的媒体内容，可以包含图片、视频等媒体内容，以及标题、副标题 --> 
+			<div class="mdui-card-media"> 
+				<img src="https://api.sunweihu.com/api/sjbz/api.php?lx=fengjing"> <!-- 卡片中可以包含一个或多个菜单按钮 --> 
+				<div class="mdui-card-menu"> <button class="mdui-btn mdui-btn-icon mdui-text-color-white"><i class="mdui-icon material-icons">share</i></button> 
+				</div> 
+			</div> <!-- 卡片的标题和副标题 --> 
+			<div class="mdui-card-primary"> 
+				<div class="mdui-card-primary-title">
+					 每日一言 
+				</div> 
+				<div class="mdui-divider"></div> 
+			</div> 
+			<script>
+				function fz(){
+					yy=document.getElementById("yy").innerHTML   yy=yy.replace("「","")   yy=yy.replace("」","")	   mdui.alert(yy);
+				}
+			</script> <!-- 卡片的内容 --> 
+			<div onclick="fz()" id="yy" class="mdui-card-content">
+				 子曰：「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」 
+			</div> 
+		</div> 
+		<div style="width: 100%" class="mdui-bottom-nav mdui-bottom-nav-text-auto mdui-bottom-nav-scroll-hide"> <a href="home.html" class="mdui-ripple mdui-bottom-nav-active"> <i class="mdui-icon material-icons">home</i> <label>主页</label> </a> <a href="tool.html" class="mdui-ripple"> <i class="mdui-icon material-icons">business_center</i> <label>工具</label> </a> <a href="function/getwz.php" class="mdui-ripple"> <i class="mdui-icon material-icons">book</i> <label>学习</label> </a> <a href="bj.html" class="mdui-ripple"> <i class="mdui-icon material-icons">file_upload</i> <label>文件</label> </a> 
+		</div>  
+	</body>
+</html>

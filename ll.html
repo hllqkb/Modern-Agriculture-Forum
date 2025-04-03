@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head> 
+   <title id="t">MDUI</title>
+   	<link rel="stylesheet" href="/css/mdui.min.css" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+	</head> 
+	<body class="mdui-theme-primary-indigo mdui-theme-accent-blue mdui-bottom-nav-fixed"> 
+   	<div class="mdui-toolbar">
+ <body class="mdui-drawer-body-right">  
+ <a mdui-drawer="{target: '#left-drawer'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+  <div class="mdui-drawer" id="left-drawer">
+  
+ <div class="mdui-card">
+  <div class="mdui-card-media">
+    <img src="https://api.sunweihu.com/api/sjbz/api.php?lx=dongman"/>
+    <div class="mdui-card-media-covered">
+      <div class="mdui-card-primary">
+        <div class="mdui-card-primary-title">你好</div>
+        <div class="mdui-card-primary-subtitle">世界!</div>
+      </div>
+    </div>
+  </div>
+    </div>
+<ul class="mdui-list">
+  <li class="mdui-menu-item">
+    <a href="home.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">home</i>主页
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="tool.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">business_center</i>工具
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item mdui-list-item-active">
+    <a href="function/getwz.php" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">book</i>论坛
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+  <li class="mdui-menu-item">
+    <a href="bj.html" class="mdui-ripple">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">file_upload</i>上传
+    </a>
+  </li>
+  <li class="mdui-divider"></li>
+</ul>
+</div>
+
+</body>
+  <div class="mdui-toolbar-spacer"></div>
+   <a onclick="window.location.reload()" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+ </div>
+</div>
+   <style>
+   span
+   {
+       color: #919191;
+       }
+   </style>
+       			<h1 id="title">
+			 Hello World! 
+		</h1>  
+      <div class="mdui-divider"></div>
+      <i class="mdui-icon material-icons">account_circle</i>
+      <span id="zh">账号</span>
+      <i class="mdui-icon material-icons">access_time</i>
+      <span id="time">时间</span>
+     <i class="mdui-icon material-icons">edit</i>
+        <span id="count">字数</span>
+        <img onclick="window.location=document.getElementById('img').src" style="width: 100%;" id="img">
+        <p id="text">文本</p>
+          <div class="mdui-divider"></div>
+      	<script src="js/mdui.min.js"></script>
+	</body>
+</html>

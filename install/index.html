@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head> 
+   	<link rel="stylesheet" href="/css/mdui.min.css" />
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+	</head> 
+	<body background="png/back.jpg"> 
+		<div>
+			 您还未安装
+		</div>  
+      <form method="get" action="install/index.php">
+<div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">User name</label>
+  <input name="zh" class="mdui-textfield-input" type="text" required/>
+  <div class="mdui-textfield-error">请输入数据库账号</div>
+   <div class="mdui-textfield-helper">请输入数据库账号</div>
+</div>
+
+<div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">Password</label>
+  <input name="mm" class="mdui-textfield-input" type="text" required/>
+  <div class="mdui-textfield-error">请输入数据库密码</div>
+  <div class="mdui-textfield-helper">请输入数据库密码</div>
+</div>
+ <div class="mdui-textfield mdui-textfield-floating-label">
+  <label class="mdui-textfield-label">lab</label>
+  <input name="lab" class="mdui-textfield-input" type="text" required/>
+  <div class="mdui-textfield-error">请输入数据库表</div>
+    <div class="mdui-textfield-helper">请输入数据库表</div>
+</div>
+<button class="mdui-btn mdui-btn-block mdui-btn-raised">确定</button>
+      </form>
+      	<script src="js/mdui.min.js"></script>
+	</body>
+</html>
